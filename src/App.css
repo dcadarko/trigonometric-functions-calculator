@@ -1,38 +1,53 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  border-top: hidden;
+  width: 50vw;
+  border-left: hidden;
+  border-right: hidden;
+  text-align: center;
+  padding-top: 15vh;
+  font-size: 1.8em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input::placeholder {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input:focus {
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+input:focus::placeholder {
+  color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.selector {
+  position: absolute;
+  right: -50em;
+  top: 3em;
+}
+
+.hide {
+  display: none;
+}
+
+.calculate {
+  position: absolute;
+  top: 60%;
+  right: 48%;
+}
+
+.result {
+  text-align: center;
+  padding-top: 10%;
+  position: relative;
 }
