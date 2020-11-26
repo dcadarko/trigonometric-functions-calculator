@@ -7,7 +7,8 @@ function App() {
   const [radioValue, setRadioValue] = useState("1");
   const [functionInResult, setFunctionInResult] = useState("");
   const [value, setValue] = useState("");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(null);
+  const [show, setShow] = useState("hide");
 
   var handleChange = (event) => {
     setValue(event.target.value);
@@ -17,22 +18,23 @@ function App() {
     event.preventDefault();
     switch (radioValue) {
       case "1":
-        setResult(Math.sin((value * Math.PI) / 180));
+        setResult(Math.sin((value * Math.PI) / 180).toFixed(4));
         setFunctionInResult("sin");
         break;
       case "2":
-        setResult(Math.cos((value * Math.PI) / 180));
+        setResult(Math.cos((value * Math.PI) / 180).toFixed(4));
         setFunctionInResult("cos");
         break;
       case "3":
-        setResult(Math.tan((value * Math.PI) / 180));
+        setResult(Math.tan((value * Math.PI) / 180).toFixed(4));
         setFunctionInResult("tan");
         break;
       case "4":
         var tan = Math.tan((value * Math.PI) / 180);
-        setResult(1 / tan);
+        setResult((1 / tan).toFixed(4));
         setFunctionInResult("ctg");
     }
+    setShow("show");
   };
 
   const radios = [
@@ -63,9 +65,9 @@ function App() {
         </ButtonGroup>
         <h1>Simple trigonometric functions calculator</h1>
         <div className="result">
-          <h3>
+          <h3 className={show}>
             {" "}
-            The {functionInResult} of the angle &alpha; is {result.toFixed(4)}{" "}
+            The {functionInResult} of the angle &alpha; is {result}{" "}
           </h3>
         </div>
         <input

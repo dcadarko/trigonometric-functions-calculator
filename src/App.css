@@ -51,3 +51,8 @@ input:focus::placeholder {
   padding-top: 10%;
   position: relative;
 }
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
